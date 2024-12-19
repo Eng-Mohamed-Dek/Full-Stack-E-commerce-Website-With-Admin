@@ -1,0 +1,138 @@
+@use '../styles/variables.scss' as color;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 1px 3px -2px black;
+  margin-top: 10px;
+
+  .logo img {
+    width: 170px;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 500;
+
+    li {
+      cursor: pointer;
+    }
+
+    hr {
+      height: 2px;
+      border: none;
+      width: 100%;
+      background-color: color.$primaryColor;
+      border-radius: 50px;
+      margin-top: -.5px;
+    }
+  }
+
+  .nav-login-cart {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+
+    button {
+      width: 130px;
+      height: 48px;
+      outline: none;
+      border: 1px solid color.$gray-color;
+      color: color.$gray-color;
+      border-radius: 75px;
+      font-size: 20px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .nav-cart-count {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: color.$primaryColor;
+      font-size: 20px;
+      padding: 15px;
+      border-radius: 50%;
+      color: #fff;
+      margin-left: -56px;
+      margin-top: -25px;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+}
+
+
+.nav-dropdown {
+  display: none;
+}
+
+
+@media (max-width: 800px) {
+  .navbar {
+    padding: 20px 0px;
+  }
+
+  .nav-dropdown {
+    display: block;
+    width: 30px;
+    rotate: 0deg;
+    transition: 0.5s;
+  }
+
+  .nav-dropdown.open {
+    rotate: -90deg;
+  }
+
+  .navbar-logo p {
+    font-size: 12px;
+  }
+
+  .nav-menu {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.04);
+    position: absolute;
+    background-color: white;
+    justify-content: center;
+    top: 70px;
+    margin-top: 20px;
+  }
+
+  .nav-menu.nav-menu-visible {
+    display: none;
+  }
+
+  ul li a {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .navbar {
+    width: 8px 0px;
+    gap: 0;
+  }
+
+  .navbar-logo img {
+    width: 40px;
+  }
+
+  .nav-menu {
+    height: 40px;
+    top: 70px;
+    font-size: 12px;
+  }
+}
